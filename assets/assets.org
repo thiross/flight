@@ -1,0 +1,24 @@
+* Background
+
+#+NAME: background
+#+HEADER: :results value file graphics :file-ext png 
+#+HEADER: :imagemagick yes
+#+HEADER: :fit yes :noweb yes :headers '("\\usepackage{tikz}" "\\usetikzlibrary{calc}")
+#+BEGIN_SRC latex
+  \begin{tikzpicture}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (20, 0);
+    \coordinate (C) at (0, 20);
+    \coordinate (D) at (20, 20);
+    \foreach \n/\c in {A/red,B/green,C/blue,D/yellow}{%
+      \draw [draw=\c,fill=\c] ($(\n)-(2,2)$) rectangle ($(\n)+(2,2)$);
+      \draw [draw=\c,fill=white] ($(\n)+(-1,-1)$) circle (0.75);
+      \draw [draw=\c,fill=white] ($(\n)+(+1,-1)$) circle (0.75);
+      \draw [draw=\c,fill=white] ($(\n)+(-1,+1)$) circle (0.75);
+      \draw [draw=\c,fill=white] ($(\n)+(+1,+1)$) circle (0.75);
+    }
+  \end{tikzpicture}
+#+END_SRC
+
+#+RESULTS: background
+[[file:background.png]]

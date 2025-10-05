@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+anyhow = "1.0"
+env_logger = "0.11"
+futures-intrusive = "0.5"
+png = "0.18"
+pollster = "0.4"
+vello = "0.6"
